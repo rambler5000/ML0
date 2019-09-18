@@ -31,7 +31,7 @@ kNN <- function(xl, z, k)
 colors <- c("setosa" = "red", "versicolor" = "green3",
 "virginica" = "blue")
 plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1)
-z <- c(1.7, 1.2) 
+z <- c(2.5, 1) 
 xl <- iris[, 3:5] 
 class <- kNN(xl, z, k=1)
 points(z[1], z[2], pch = 22, bg = colors[class], asp = 1) 
