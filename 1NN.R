@@ -2,7 +2,7 @@ euclideanDistance <- function(u, v)
 {
 	sqrt(sum((u - v)^2))
 }
-
+ 
 sortObjectsByDist <- function(xl, z, metricFunction =
 euclideanDistance)
 {
