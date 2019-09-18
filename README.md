@@ -8,6 +8,6 @@
 # Пример
 Рассмотрим точку Z(2.5, 1) на выборке "Ирисы Фишера". 
 Применим метод kNN и получим , что Z принадлежит к классу "зеленых кружочков".
-https://github.com/KOCTYN/ML0/blob/master/1.png "Optional Title"
+![Image alt]https://github.com/KOCTYN/ML0/blob/master/1.png
 
 ![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
