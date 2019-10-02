@@ -1,12 +1,10 @@
 # kNN
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=s^{dr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?s^{dr}" title="s^{dr}" /></a>
 Метод k ближайших соседей(kNN).
 Алгоритм kNN - метрический алгоритм классификации, основанный на оценивании сходства объектов.
 Относит классифицируемый обьект к тому классу, элементов которого больше среди K ближайших соседей.
 Формула алгоритма kNN: 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]&space;a(u,x^{l},k)&space;=&space;arg&space;max\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]&space;a(u,x^{l},k)&space;=&space;arg&space;max\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" title="w(i,u) = [i\leqslant k] a(u,x^{l},k) = arg max\sum\limits_{i=1}^{k}[y^i_u = y]" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]&space;a(u,x^{l},k)&space;=&space;arg\space;max\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]&space;a(u,x^{l},k)&space;=&space;arg&space;max\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" title="w(i,u) = [i\leqslant k] a(u,x^{l},k) = arg max\sum\limits_{i=1}^{k}[y^i_u = y]" /></a>
 
 где k -параметр
 Реализация kNN функции
