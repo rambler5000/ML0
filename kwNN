@@ -35,7 +35,7 @@ kwNN <- function(xl, z, k,q)
 	xl <- sortObjectsByDist(xl, z)
 	n <- dim(xl)[2] - 1
 	classes <- xl[1:k, n + 1]
-	for(i in i:k)
+	for(i in 1:k)
 	{
 		w<-q ^ i
 		m[classes[i]]<-m[classes[i]]+w
