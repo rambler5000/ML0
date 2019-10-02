@@ -18,17 +18,6 @@ euclideanDistance)
 	return (orderedXl);
 }
 
-kNN <- function(xl, z, k)
-{
-	orderedXl <- sortObjectsByDist(xl, z)
-	n <- dim(orderedXl)[2] - 1
-	classes <- orderedXl[1:k, n + 1]
-	counts <- table(classes)
-	class <- names(which.max(counts))
-	##cat(class," ")
-	return (class)
-}
-
 kwNN <- function(xl, z, k,q)
 {
 	 m <- c("setosa" = 0, "versicolor" = 0, "virginica" = 0)
