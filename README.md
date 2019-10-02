@@ -24,6 +24,7 @@ kNN <- function(xl, z, k)
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_map.png)
 # Выберем оптимальноё k, воспользовавшись критерием скользящего контроля LOO
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/LOO.png)
+
 Таким образом оптимальное k=6
 # kwNN
 Метод k-взвешеных ближайших соседей(kwNN).
