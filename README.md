@@ -70,6 +70,7 @@ kwNN <- function(xl, z, k,q)
 kNN
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_example.png)
+
 kwNN
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_example.png)
