@@ -68,6 +68,6 @@ kwNN <- function(xl, z, k,q)
 
 # Пример,	показывающий	преимущество	метода kwNN над kNN
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_example.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_ example.png)
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_example.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_ example.png)
