@@ -65,3 +65,9 @@ kwNN <- function(xl, z, k,q)
 
 # Карта классификации kwNN
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_map.png)
+
+# Пример,	показывающий	преимущество	метода kwNN над kNN
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_map.png)
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_map.png)
