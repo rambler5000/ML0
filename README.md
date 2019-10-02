@@ -4,7 +4,7 @@
 Относит классифицируемый обьект к тому классу, элементов которого больше среди K ближайших соседей.
 Формула алгоритма kNN: 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]\&space;a(u,x^{l},k)&space;=&space;arg\max\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]\&space;a(u,x^{l},k)&space;=&space;arg\max\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" title="w(i,u) = [i\leqslant k]\ a(u,x^{l},k) = arg\max\sum\limits_{i=1}^{k}[y^i_u = y]" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" title="w(i,u) = [i\leqslant k]\ a(u,x^{l},k) = arg\max\limits_{y\in Y}\sum\limits_{i=1}^{k}[y^i_u = y]" /></a>
 
 где k -параметр
 Реализация kNN функции
@@ -33,6 +33,11 @@ kNN <- function(xl, z, k)
 # kwNN
 Метод k-взвешеных ближайших соседей(kwNN).
 По сравнению с kNN, kwNN принимает во внимание не только колличество соседей определенного класса но и удаленность от классифицируемого обьекта. Для каждого класса определяется оценка близости, у какого класса больше оценка близости тот класс и присваивается классифицируемому обьекту.
+Формула алгоритма kwNN:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" title="w(i,u) = [i\leqslant k]w(i)\ a(u,x^{l},k) = arg\max\limits_{y\in Y}\sum\limits_{i=1}^{k}[y^i_u = y]w(i)" /></a>
+
+где w(i) = q^i - геометрическая прогрессия с параметром q
 
 Реализация kwNN фунции
 ```
