@@ -33,6 +33,7 @@ kNN <- function(xl, z, k)
 # kwNN
 Метод k-взвешеных ближайших соседей(kwNN).
 По сравнению с kNN, kwNN принимает во внимание не только колличество соседей определенного класса но и удаленность от классифицируемого обьекта. Для каждого класса определяется оценка близости, у какого класса больше оценка близости тот класс и присваивается классифицируемому обьекту.
+
 Формула алгоритма kwNN:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" title="w(i,u) = [i\leqslant k]w(i)\ a(u,x^{l},k) = arg\max\limits_{y\in Y}\sum\limits_{i=1}^{k}[y^i_u = y]w(i)" /></a>
@@ -59,6 +60,8 @@ kwNN <- function(xl, z, k,q)
 # Пример
 Рассмотрим точку Z(2.5, 1) на выборке "Ирисы Фишера". 
 Применим метод kwNN и получим , что Z принадлежит к классу "зеленых кружочков".
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN.png)
 
 # Карта классификации kwNN
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_map.png)
