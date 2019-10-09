@@ -24,13 +24,13 @@ kNN <- function(xl, z, k)
 Рассмотрим точку Z(2.5, 1) на выборке "Ирисы Фишера". 
 Применим метод kNN и получим , что Z принадлежит к классу "зеленых кружочков".
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/knn.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/kNN.png)
 # Карта классификации kNN
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_map.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/kNN_map.png)
 # Выберем оптимальное k, воспользовавшись критерием скользящего контроля LOO
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/LOO_kNN.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/LOO_for_kNN.png)
 
-Таким образом оптимальное k=6
+Таким образом оптимальное k=6 LOO=0.0333
 # kwNN
 Метод k-взвешеных ближайших соседей(kwNN).
 По сравнению с kNN, kwNN принимает во внимание не только колличество соседей определенного класса но и удаленность от классифицируемого обьекта. Выберается k ближайших соседей. Каждому соседу присваивается вес(мера удаленности соседа от классифицируемого обьекта). Объекту присваивается класс вес которого больше.
@@ -63,16 +63,20 @@ kwNN <- function(xl, z, k,q)
 Рассмотрим точку Z(2.5, 1) на выборке "Ирисы Фишера". 
 Применим метод kwNN и получим , что Z принадлежит к классу "зеленых кружочков".
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/kwNN.png)
 
 # Карта классификации kwNN
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_map.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/kwNN_map.png)
+
+# Выберем оптимальное q, воспользовавшись критерием скользящего контроля LOO k=6
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/LOO_for_kwNN.png)
+q=1 LOO=0.0333
 
 # Пример,	показывающий	преимущество	метода kwNN над kNN
 kNN
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_example.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/kNN_example.png)
 
 kwNN
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/kwNN_example.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/kwNN_example.png)
