@@ -1,4 +1,4 @@
-##Метод парзеновского окна
+# Метод парзеновского окна
 Метод Парзеновского окна метрический алгорит классификации,основанный на оценивании сходства объектов.
 Формула алгоритма:
 
@@ -32,34 +32,34 @@ parsen <- function(xl, z, h,K)
 }
 ```
 
-#Выберем оптимальное h, воспользовавшись критерием скользящего контроля LOO для некоторых функций ядер и построим карту классификации
+# Выберем оптимальное h, воспользовавшись критерием скользящего контроля LOO для некоторых функций ядер и построим карту классификации
 
 
-#Епаничникова
+# Епаничникова
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/epanechnikov_map.png)
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_epanechnikov.png)
 
 
 
-#Квадратичное
+# Квадратичное
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/qvad_map.png)
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_qvad.png)
 
-#Треугольное
+# Треугольное
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/triygolnik_map.png)
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_triygolnik.png)
 
-#Гауссовское
+# Гауссовское
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/gaus_map.png)
 
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_gaus.png)
 
 
-#Прямоугольное
+# Прямоугольное
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/primoygolnik_map.png)
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_primoygolnik.png)
