@@ -70,6 +70,7 @@ kwNN <- function(xl, z, k,q)
 
 # Выберем оптимальное q, воспользовавшись критерием скользящего контроля LOO k=6
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab1/LOO_for_kwNN.png)
+
 q=1 LOO=0.0333
 
 # Пример,	показывающий	преимущество	метода kwNN над kNN
