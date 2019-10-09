@@ -38,21 +38,28 @@ parsen <- function(xl, z, h,K)
 #Епаничникова
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/epanechnikov_map.png)
 
-
-
-
-#Гауссовское
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/gaus_map.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_epanechnikov.png)
 
 
 
 #Квадратичное
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/qvad_map.png)
 
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_qvad.png)
 
 #Треугольное
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/triygolnik_map.png)
 
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_triygolnik.png)
+
+#Гауссовское
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/gaus_map.png)
+
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_gaus.png)
+
 
 #Прямоугольное
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/primoygolnik_map.png)
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab2/LOO_for_primoygolnik.png)
