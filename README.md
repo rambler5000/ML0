@@ -4,9 +4,10 @@
 Относит классифицируемый обьект к тому классу, элементов которого больше среди K ближайших соседей.
 Формула алгоритма kNN: 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]" title="w(i,u) = [i\leqslant k]\ a(u,x^{l},k) = arg\max\limits_{y\in Y}\sum\limits_{i=1}^{k}[y^i_u = y]" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" target="_blank"><img src="https://latex.codecogs.com/png.latex?$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" title="$a(u) = arg \max\limits_{y \in Y}[x_u^{(i)}=y]w(i,u)$" /></a>
 
-где k -параметр
+где k -параметр определяющий колличество соседей
+
 Реализация kNN функции
 ```
 kNN <- function(xl, z, k)
@@ -24,21 +25,22 @@ kNN <- function(xl, z, k)
 Применим метод kNN и получим , что Z принадлежит к классу "зеленых кружочков".
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/knn.png)
-# Карта классификации
+# Карта классификации kNN
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/kNN_map.png)
-# Выберем оптимальноё k, воспользовавшись критерием скользящего контроля LOO
+# Выберем оптимальное k, воспользовавшись критерием скользящего контроля LOO
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/LOO_kNN.png)
 
 Таким образом оптимальное k=6
 # kwNN
 Метод k-взвешеных ближайших соседей(kwNN).
-По сравнению с kNN, kwNN принимает во внимание не только колличество соседей определенного класса но и удаленность от классифицируемого обьекта. Для каждого класса определяется оценка близости, у какого класса больше оценка близости тот класс и присваивается классифицируемому обьекту.
+По сравнению с kNN, kwNN принимает во внимание не только колличество соседей определенного класса но и удаленность от классифицируемого обьекта. Выберается k ближайших соседей. Каждому соседу присваивается вес(мера удаленности соседа от классифицируемого обьекта). Объекту присваивается класс вес которого больше.
 
 Формула алгоритма kwNN:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" title="w(i,u) = [i\leqslant k]w(i)\ a(u,x^{l},k) = arg\max\limits_{y\in Y}\sum\limits_{i=1}^{k}[y^i_u = y]w(i)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" target="_blank"><img src="https://latex.codecogs.com/png.latex?$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" title="$a(u) = arg \max\limits_{y \in Y}[x_u^{(i)}=y]w(i,u)$" /></a>
 
-где w(i) = q^i - геометрическая прогрессия с параметром q
+где w(i) функция веса, строго убывающая последовательность вещественных весов, задающая вклад i-го соседа при классификации оюъекта u.
+Например: q^i, где q из диапазона (0,1)
 
 Реализация kwNN фунции
 ```
