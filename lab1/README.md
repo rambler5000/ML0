@@ -4,7 +4,7 @@
 Относит классифицируемый обьект к тому классу, элементов которого больше среди K ближайших соседей.
 Формула алгоритма kNN: 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" target="_blank"><img src="https://latex.codecogs.com/png.latex?$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" title="$a(u) = arg \max\limits_{y \in Y}[x_u^{(i)}=y]w(i,u)$" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}&space;\sum\limits_{i=1}^m[y(x_u^i)=y]w(i,u)" target="_blank"><img src="https://latex.codecogs.com/png.latex?a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}&space;\sum\limits_{i=1}^m[y(x_u^i)=y]w(i,u)" title="a(u) = arg \max\limits_{y \in Y} \sum\limits_{i=1}^m[y(x_u^i)=y]w(i,u)" /></a>
 
 где k -параметр определяющий колличество соседей
 
@@ -37,7 +37,7 @@ kNN <- function(xl, z, k)
 
 Формула алгоритма kwNN:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" target="_blank"><img src="https://latex.codecogs.com/png.latex?$a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}[x_u^{(i)}=y]w(i,u)$" title="$a(u) = arg \max\limits_{y \in Y}[x_u^{(i)}=y]w(i,u)$" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}&space;\sum\limits_{i=1}^m[y(x_u^i)=y]w(i,u)" target="_blank"><img src="https://latex.codecogs.com/png.latex?a(u)&space;=&space;arg&space;\max\limits_{y&space;\in&space;Y}&space;\sum\limits_{i=1}^m[y(x_u^i)=y]w(i,u)" title="a(u) = arg \max\limits_{y \in Y} \sum\limits_{i=1}^m[y(x_u^i)=y]w(i,u)" /></a>
 
 где w(i) функция веса, строго убывающая последовательность вещественных весов, задающая вклад i-го соседа при классификации оюъекта u.
 Например: q^i, где q из диапазона (0,1)
