@@ -1,0 +1,65 @@
+euclideanDistance <- function(u, v)
+{
+  sqrt(sum((u - v)^2))
+}
+
+sortObjectsByDist <- function(xl, z, metricFunction =
+                                euclideanDistance)
+{
+  
+  l <- dim(xl)[1]
+  n <- dim(xl)[2] - 1
+  distances <- matrix(NA, l, 2)
+  for (i in 1:l)
+  {
+    distances[i, ] <- c(i, metricFunction(xl[i, 1:n], z))
+  }
+  
+  orderedXl <- xl[order(distances[, 2]), ]
+  return (orderedXl);
+}
+
+kNN <- function(xl, z, k)
+{
+  n <- dim(xl)[2] - 1
+  classes <- xl[1:k, n + 1]
+  counts <- table(classes)
+  class <- names(which.max(counts))
+  return (class)
+}
+
+colors <- c("setosa" = "red", "versicolor" = "green3",
+            "virginica" = "blue") 
+xl <- iris[, 3:5]
+k <-150
+LOO<-rep(0,k)
+
+n<-150
+K<-rep(0,k)
+accuracy<-rep(0,k)
+for(i in 1:n)
+{
+  z<-c(xl[i,1],xl[i,2])
+  
+  x<-sortObjectsByDist(xl[, 1:3][-i,], z)
+  
+  for(j in 1:k)
+  {
+    class<-kNN(x,z,k=j)
+    if(class != xl[i,3])LOO[j]<-LOO[j]+1
+  }
+}
+for (i in 1:k)
+{
+  K[i]<-i
+  accuracy[i]<-LOO[i]/n
+}
+
+
+plot(K,accuracy,type = "l")
+
+min<-which.min(accuracy)
+
+points(K[min],accuracy[min],pch = 21, bg = "red", asp = 1)
+
+text( K[min],accuracy[min], sprintf("(%d; %.4f)", K[min], accuracy[min]), adj = c( 0, -1 ), col = "blue" )
