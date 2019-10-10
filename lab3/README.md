@@ -73,9 +73,9 @@ for(i in 1:n)
 
 
 # Гауссовское максимум ошибок = 5 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab3/gaus_map.png)
-
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab3/gaus.png)
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab3/gaus_map.png)
 
 
 # Треугольное максимум ошибок =5
