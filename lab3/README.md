@@ -79,7 +79,7 @@ for(i in 1:n)
 
 
 # Треугольное максимум ошибок =5
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab3/triygolnik_map.png)
-
-
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab3/triygolnik.png)
+
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab3/triygolnik_map.png)
