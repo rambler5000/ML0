@@ -96,17 +96,15 @@ n<-length(gamma)
 gammamax<-max(gamma)
 for(i in 1:n)
 {
-  x<-xl[i,1]
-  y<-xl[i,2]
-  r<-h
+  z<-c(xl[i,1],xl[i,2])
   
   if(gamma[i]>0)
   {
     color<-adjustcolor(colors[xl[i,3]],gamma[i]/E/gammamax)
-    draw.circle(x,y,r,50,border = color, col = color)
+    draw.circle(z[1],z[2],h,50,border = color, col = color)
   }
 }
-readline(prompt="Enter to continue")
+readline(prompt="Enter")
 x<-0.8
 while(x<7) 
 {
