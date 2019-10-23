@@ -22,12 +22,12 @@ parsen <- function(xl, z, h,K)
   classes <- xl[1:150, n + 1]
   for(i in 1:150)
   {
-    w<-K(distances[i,2]/h)
-    m[classes[i]]<-m[classes[i]]+w
+    w <- K(distances[i,2]/h)
+    m[classes[i]] <- m[classes[i]] + w
   }
   if(m[1]!=0 || m[2]!=0 || m[3]!=0)class <- names(which.max(m))
-  else class<-"not_class"
-  if(class==0)class<-"grey"
+  else class <- "not_class"
+  if(class==0)class <- "grey"
   return (class)
 }
 ```
