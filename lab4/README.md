@@ -5,7 +5,7 @@
 <a href="https://www.codecogs.com/eqnedit.php?latex=$M(x_i)&space;=&space;W_y(x_i,X^l)&space;-&space;\max\limits_{y&space;\in&space;Y\{y_i\}}W_y(x_i,X^l)&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$M(x_i)&space;=&space;W_y(x_i,X^l)&space;-&space;\max\limits_{y&space;\in&space;Y\{y_i\}}W_y(x_i,X^l)&space;$" title="$M(x_i) = W_y(x_i,X^l) - \max\limits_{y \in Y\{y_i\}}W_y(x_i,X^l) $" /></a>
 
 Где W функция веса, зависящая от алгоритма классификации 
-Отступ показывает степень типичности объекта: чем больше <a href="https://www.codecogs.com/eqnedit.php?latex=$M(x_i)&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$M(x_i)&space;$" title="$M(x_i) $" /></a>, тем «глубже» <a href="https://www.codecogs.com/eqnedit.php?latex=$x_i&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$x_i&space;$" title="$x_i $" /></a> в своём классе.
+Отступ показывает степень типичности объекта: чем больше <a href="https://www.codecogs.com/eqnedit.php?latex=$M(x_i)&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$M(x_i)&space;$" title="$M(x_i) $" /></a>, тем глубже <a href="https://www.codecogs.com/eqnedit.php?latex=$x_i&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$x_i&space;$" title="$x_i $" /></a> в своём классе.
 
 Нахождение отступов:
 ```
