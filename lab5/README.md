@@ -23,7 +23,7 @@
 ```
 line_norm <- function(center,A)
 {
-  det<-det(A)
+  det <- det(A)
   a <- A[2,2]/det
   b <- -A[2,1]/det
   c <- -A[1,2]/det
