@@ -19,16 +19,25 @@
 В гауссовом наивном байесовском методе предполагается, что непрерывные значения, связанные с каждым признаком, распределены в соответствии с распределением Гаусса . Гауссово распределение также называется нормальным распределением.
 Вероятность признаков предполагается гауссовой, следовательно, условная вероятность определяется как:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{()x_i-\mu_y)^2}{2\sigma^2_y})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{()x_i-\mu_y)^2}{2\sigma^2_y})" title="P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{()x_i-\mu_y)^2}{2\sigma^2_y})" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" title="P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" /></a>
 
 Достоинством наивного байесовского классификатора является малое количество данных необходимых для обучения, оценки параметров и классификации.
 
 # Реализация на R
 
 ```R
-
+naiv <- function(x,mu,sigma,P)
+{
+  p <- log(1,P)
+  p <- 0
+  sigma <- as.numeric(sigma)
+  pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
+  p <- p+log(pyj[1,1])+log(pyj[1,2])
+  
+  return(p)
+}
 ```
 
 # Пример работы классификатора
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab6/niav_map.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab6/naiv.png)
