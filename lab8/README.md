@@ -2,9 +2,9 @@
 
 Линейный дискриминант Фишера похож на подстановочный алгоритм, но имеет отличие в том, что мы предполагаем равенство ковариационных матриц, тогда алгоритм классификации примет вид:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\ln(\lambda_y&space;P_y)&space;-&space;\frac{1}{2}\mu^T_y\Sigma^{-1}\mu_y&space;&plus;&space;x^T\Sigma^{-1}\mu_y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\ln(\lambda_y&space;P_y)&space;-&space;\frac{1}{2}\mu^T_y\Sigma^{-1}\mu_y&space;&plus;&space;x^T\Sigma^{-1}\mu_y)" title="a(x) = \arg \max_{y \in Y}(\ln(\lambda_y P_y) - \frac{1}{2}\mu^T_y\Sigma^{-1}\mu_y + x^T\Sigma^{-1}\mu_y)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\ln(\lambda_y&space;P_y)&space;-&space;\frac{1}{2}\mu^T_y\Sigma^{-1}\mu_y&space;&plus;&space;x^T\Sigma^{-1}\mu_y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\ln(\lambda_y&space;P_y)&space;-&space;\frac{1}{2}\mu^T_y\Sigma^{-1}\mu_y&space;&plus;&space;x^T\Sigma^{-1}\mu_y)" title="a(x) = \arg \max_{y \in Y}(\ln(\lambda_y P_y) - \frac{1}{2}\mu^T_y\Sigma^{-1}\mu_y + x^T\Sigma^{-1}\mu_y)" /></a> или
 
-или <a href="https://www.codecogs.com/eqnedit.php?latex=a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\beta_y&space;&plus;&space;x^T\alpha_y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\beta_y&space;&plus;&space;x^T\alpha_y)" title="a(x) = \arg \max_{y \in Y}(\beta_y + x^T\alpha_y)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\beta_y&space;&plus;&space;x^T\alpha_y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a(x)&space;=&space;\arg&space;\max_{y&space;\in&space;Y}(\beta_y&space;&plus;&space;x^T\alpha_y)" title="a(x) = \arg \max_{y \in Y}(\beta_y + x^T\alpha_y)" /></a>
 
 Параметры нормального распределения оценивают согласно принципа максимума правдоподобия:
 
