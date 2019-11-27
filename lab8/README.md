@@ -46,7 +46,7 @@ estimateSigma <- function(x1,x2,mu1,mu2)
     sigma <- sigma + (t(x2[i,] - mu2) %*% (x2[i,] - mu2))
     
   }
-  return(sigma/(n + 2))
+  return(sigma/(n - 2))
 }
 
 coef <- function(mu1,mu2,sigma)
