@@ -1,6 +1,8 @@
 ## Подстановочный алгоритм (plug-in)
 
-Алгоритм заключается в восстановлении параметров нормального распределения <a href="https://www.codecogs.com/eqnedit.php?latex=\mu_y,\Sigma_y" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_y,\Sigma_y" title="\mu_y,\Sigma_y" /></a> ,  для каждого класса  <a href="https://www.codecogs.com/eqnedit.php?latex=y&space;\in&space;Y" target="_blank"><img src="https://latex.codecogs.com/gif.latex?y&space;\in&space;Y" title="y \in Y" /></a> и подстановке их в формулу оптимального байесовского классификатора. Предполагается, что ковариационные матрицы классов не равны.
+Алгоритм заключается в восстановлении параметров нормального распределения <a href="https://www.codecogs.com/eqnedit.php?latex=\mu_y,\Sigma_y" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_y,\Sigma_y" title="\mu_y,\Sigma_y" /></a> ,  для каждого класса  <a href="https://www.codecogs.com/eqnedit.php?latex=y&space;\in&space;Y" target="_blank"><img src="https://latex.codecogs.com/gif.latex?y&space;\in&space;Y" title="y \in Y" /></a> и подстановке их в формулу оптимального байесовского классификатора <a href="https://www.codecogs.com/eqnedit.php?latex=a(x)&space;=&space;\arg\max_{y&space;\in&space;Y}\lambda_yP_yp_y(x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a(x)&space;=&space;\arg\max_{y&space;\in&space;Y}\lambda_yP_yp_y(x)" title="a(x) = \arg\max_{y \in Y}\lambda_yP_yp_y(x)" /></a>, прологорифмируя получим следующую формулу <a href="https://www.codecogs.com/eqnedit.php?latex=a(x)&space;=&space;\arg\max_{y&space;\in&space;Y}(\ln(\lambda_yP_y)-\frac{n}{2}\ln(2\pi)-\frac{1}{2}\ln(|\Sigma_y^{-1}|)-\frac{1}{2}(x-\mu_y)^T\Sigma_y^{-1}(x-\mu_y))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a(x)&space;=&space;\arg\max_{y&space;\in&space;Y}(\ln(\lambda_yP_y)-\frac{n}{2}\ln(2\pi)-\frac{1}{2}\ln(|\Sigma_y^{-1}|)-\frac{1}{2}(x-\mu_y)^T\Sigma_y^{-1}(x-\mu_y))" title="a(x) = \arg\max_{y \in Y}(\ln(\lambda_yP_y)-\frac{n}{2}\ln(2\pi)-\frac{1}{2}\ln(|\Sigma_y^{-1}|)-\frac{1}{2}(x-\mu_y)^T\Sigma_y^{-1}(x-\mu_y))" /></a>. 
+
+Предполагается, что ковариационные матрицы классов не равны.
 
 Параметры нормального распределения оценивают согласно принципа максимума правдоподобия:
 
@@ -15,7 +17,7 @@
 Прологарифмируя обе части выражения и проведя преобразования получим уровнение разделяющей поверхности.
 
 # Реализация на R
-```
+```R
 vostanovleniemu <- function(x)
 {
   m <- dim(x)[2]
