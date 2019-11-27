@@ -1,6 +1,6 @@
 library("MASS")
 
-vostanovleniemu <- function(x)
+estimateMu <- function(x)
 {
   m <- dim(x)[2]
   mu <- matrix(NA, 1, m)
@@ -11,7 +11,7 @@ vostanovleniemu <- function(x)
   return(mu)
 }
 
-vostanovlenieсovariance <- function(x,mu)
+estimateSigma <- function(x,mu)
 {
   n <- dim(x)[1]
   m <- dim(x)[2]
@@ -56,11 +56,11 @@ colors <- c("tan1", "royalblue")
 points(xy1, pch=21, col=colors[1], bg=colors[1])
 points(xy2, pch=21, col=colors[2], bg=colors[2])
 
-mu1 <- vostanovleniemu(xy1)
-mu2 <- vostanovleniemu(xy2)
+mu1 <- estimateMu(xy1)
+mu2 <- estimateMu(xy2)
 
-sigma1 <-vostanovlenieсovariance(xy1,mu1)
-sigma2 <-vostanovlenieсovariance(xy2,mu2)
+sigma1 <-estimateSigma(xy1,mu1)
+sigma2 <-estimateSigma(xy2,mu2)
 
 x <- -10
 while(x < 10) 
@@ -69,12 +69,9 @@ while(x < 10)
   while (y < 10) 
   {
     z <- c(x,y)  
-    
-    c1 <- naiv(z,mu1,sigma1,0.5)
-    c<-0
-    
-    c2 <- naiv(z,mu2,sigma2,0.5)
-    if(c1 > c2)  
+    p1 <- naiv(z,mu1,sigma1,0.5)
+    p2 <- naiv(z,mu2,sigma2,0.5)
+    if(p1 > p2)  
     {
       class <- 1
     }else{
