@@ -18,7 +18,9 @@
 
 # Реализация на R
 ```R
-vostanovleniemu <- function(x)
+library(MASS)
+
+estimateMu <- function(x)
 {
   m <- dim(x)[2]
   mu <- matrix(NA, 1, m)
@@ -29,16 +31,18 @@ vostanovleniemu <- function(x)
   return(mu)
 }
 
-vostanovlenieсovariance <- function(x,mu)
+estimateSigma <- function(x,mu)
 {
   n <- dim(x)[1]
   m <- dim(x)[2]
   sigma <- matrix(0, m, m)
   for(i in 1:n)
   {
-    sigma <- sigma + (t(x[i,]-mu)%*%(x[i,]-mu))
+    
+    sigma <- sigma + (t(x[i,]-mu) %*% (x[i,]-mu))
+    
   }
-  return(sigma/(n-1))
+  return(sigma/(n - 1))
 }
 
 coef <- function(mu1,mu2,sigma1,sigma2)
@@ -46,33 +50,43 @@ coef <- function(mu1,mu2,sigma1,sigma2)
   
   invsigma1 <- solve(sigma1)
   invsigma2 <- solve(sigma2)
-
+  
   a <- invsigma1 - invsigma2
   A <- a[1,1]
   B <- a[2,2]
-  C <- 2*a[1,2]
+  C <- 2 * a[1,2]
   
-  b <- invsigma1%*%t(mu1) - invsigma2%*%t(mu2)
-  D <- -2*b[1,1]
-  E <- -2*b[2,1]
+  b <- invsigma1 %*% t(mu1) - invsigma2 %*% t(mu2)
+  D <- -2 * b[1,1]
+  E <- -2 * b[2,1]
   
-  F <- c(log(det(sigma1)) - log(det(sigma2)) + mu1%*%invsigma1%*%t(mu1) - mu2%*%invsigma2%*%t(mu2))
-
+  F <- c(log(det(sigma1)) - log(det(sigma2)) + mu1 %*% invsigma1 %*% t(mu1) - mu2 %*% invsigma2 %*% t(mu2))
+  
   func <- function(x, y) {
     x^2*A + y^2*B + x*y*C + x*D + y*E + F
   }
   return(func)
 }
-
 ```
 
 # Примеры работы подстановочного алгоритма:
 # Элипс
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab7/elips.png)
 
+карта классификации
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mu_1(10,&space;15),\mu2(15,15),\Sigma_1(5,0,0,5),\Sigma2(15,0,0,20)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_1(10,&space;15),\mu2(15,15),\Sigma_1(5,0,0,5),\Sigma2(15,0,0,20)" title="\mu_1(10, 15),\mu2(15,15),\Sigma_1(5,0,0,5),\Sigma2(15,0,0,20)" /></a>
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab7/elipse_map.png)
+
 # Прямая
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab7/prymay.png)
+
+карта классификации
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mu_1(5,&space;25),\mu2(15,15),\Sigma_1(5,0,0,5),\Sigma_2(5,0,0,5)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_1(5,&space;25),\mu2(15,15),\Sigma_1(5,0,0,5),\Sigma_2(5,0,0,5)" title="\mu_1(5, 25),\mu2(15,15),\Sigma_1(5,0,0,5),\Sigma_2(5,0,0,5)" /></a>
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab7/line_map.png)
 
 # Гипербола
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab7/giperbola.png)
 
+карта классификации
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mu_1(10,&space;15),\mu2(15,15),\Sigma_1(5,0,0,20),\Sigma_2(15,0,0,10)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_1(10,&space;15),\mu2(15,15),\Sigma_1(5,0,0,20),\Sigma_2(15,0,0,10)" title="\mu_1(10, 15),\mu2(15,15),\Sigma_1(5,0,0,20),\Sigma_2(15,0,0,10)" /></a>
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab7/giperbola_map.png)
