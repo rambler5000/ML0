@@ -40,4 +40,4 @@ naiv <- function(x,mu,sigma,P)
 
 # Пример работы классификатора
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab6/naiv.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab6/naiv_map.png)
