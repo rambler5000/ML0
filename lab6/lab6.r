@@ -25,9 +25,9 @@ estimateSigma <- function(x,mu)
   return(sigma/(n-1))
 }
 
-naiv <- function(x,mu,sigma,P)
+naiv <- function(x,mu,sigma,l,P)
 {
-  p <- log(1,P)
+  p <- log(l,P)
   p <- 0
   sigma <- as.numeric(sigma)
   pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
@@ -43,8 +43,8 @@ sigma2 <- matrix(c(1, 0, 0, 1),2,2)
 mu1 <- c(0, 0)
 mu2 <- c(5, 5)
 
-xy1 <- mvrnorm(n=n, mu = mu1, Sigma = sigma1)
-xy2 <- mvrnorm(n=n, mu = mu2, Sigma = sigma2)
+# xy1 <- mvrnorm(n=n, mu = mu1, Sigma = sigma1)
+# xy2 <- mvrnorm(n=n, mu = mu2, Sigma = sigma2)
 
 plotxmin <- min(xy1[,1], xy2[,1]) - 1
 plotymin <- min(xy1[,2], xy2[,2]) - 1
@@ -55,6 +55,12 @@ plot(xy1[,1],xy2[,2], type="n", xlab = "x", ylab = "y", xlim=c(plotxmin, plotxma
 colors <- c("tan1", "royalblue")
 points(xy1, pch=21, col=colors[1], bg=colors[1])
 points(xy2, pch=21, col=colors[2], bg=colors[2])
+
+l1<-20
+l2<-6
+
+P1<-dim(xy1)[1]/(dim(xy1)[1]+dim(xy2)[1])
+P2<-dim(xy2)[1]/(dim(xy1)[1]+dim(xy2)[1])
 
 mu1 <- estimateMu(xy1)
 mu2 <- estimateMu(xy2)
@@ -69,8 +75,8 @@ while(x < 10)
   while (y < 10) 
   {
     z <- c(x,y)  
-    p1 <- naiv(z,mu1,sigma1,0.5)
-    p2 <- naiv(z,mu2,sigma2,0.5)
+    p1 <- naiv(z,mu1,sigma1,l1,P1)
+    p2 <- naiv(z,mu2,sigma2,l1,P1)
     if(p1 > p2)  
     {
       class <- 1
