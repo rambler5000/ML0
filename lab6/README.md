@@ -26,9 +26,9 @@
 # Реализация на R
 
 ```R
-naiv <- function(x,mu,sigma,P)
+naiv <- function(x,mu,sigma,l,P)
 {
-  p <- log(1,P)
+  p <- log(l,P)
   p <- 0
   sigma <- as.numeric(sigma)
   pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
