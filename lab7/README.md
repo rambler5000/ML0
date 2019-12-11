@@ -67,6 +67,47 @@ coef <- function(mu1,mu2,sigma1,sigma2)
   }
   return(func)
 }
+
+classifier <- function(xy,m,s,lymda,PP)
+{
+  n <- dim(mu)[2]
+  p <- rep(0,n)
+  a <- matrix(c(0,0,0,0),2,2)
+  for(i in 1:n)
+  {
+    sigma <- matrix(c(s[i*2-1,1],s[i*2-1,2],s[i*2,1],s[i*2,2]),2,2)
+    mu <- matrix(c(m[i,1],m[i,2]),1,2)
+    l <- lymda[i]
+    P <- PP[i]
+    det <- det(sigma)
+    invsigma <- solve(sigma)
+    a <- invsigma 
+    A <- a[1,1]
+    B <- a[2,2]
+    C <- 2 * a[1,2]
+    
+    b <- invsigma %*% t(mu) 
+    D <- -2 * b[1,1]
+    E <- -2 * b[2,1]
+    
+    F <- c(log(det(sigma))) + mu %*% invsigma %*% t(mu) 
+    
+    func <- function(x, y) {
+      f <- x^2*A + y^2*B + x*y*C + x*D + y*E + F
+    }
+    f <- func(xy[1],xy[2])
+    p[i] <- log(l*P)+f
+  }
+  if(p[1] < p[2])
+  {
+    class <- colors[1]
+  }
+  else
+  {
+    class <- colors[2]
+  }
+  return(class)
+}
 ```
 
 # Примеры работы подстановочного алгоритма:
