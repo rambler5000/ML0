@@ -98,7 +98,7 @@ classifier <- function(xy,m,s,lymda,PP)
     f <- func(xy[1],xy[2])
     p[i] <- log(l*P)+f
   }
-  if(p[1] < p[2])
+  if(p[1] > p[2])
   {
     class <- colors[1]
   }
