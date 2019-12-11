@@ -26,15 +26,30 @@
 # Реализация на R
 
 ```R
-naiv <- function(x,mu,sigma,P)
+naiv <- function(x,m,s,lamda,PP)
 {
-  p <- log(1,P)
-  p <- 0
-  sigma <- as.numeric(sigma)
-  pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
-  p <- p+log(pyj[1,1])+log(pyj[1,2])
-  
-  return(p)
+  n <- dim(mu)[2]
+  p <- rep(0,n)
+  a <- matrix(c(0,0,0,0),2,2)
+  for(i in 1:n)
+  {
+    sigma <- s[i]
+    mu <- matrix(c(m[i,1],m[i,2]),1,2)
+    l <- lamda[i]
+    P <- PP[i]
+    pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
+    p[i] <- log(lamda*P)+log(pyj[1,1])+log(pyj[1,2])
+    
+  }
+  if(p[1] > p[2])
+  {
+    class <- colors[1]
+  }
+  else
+  {
+    class <- colors[2]
+  }
+  return(class)
 }
 ```
 
