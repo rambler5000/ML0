@@ -154,3 +154,4 @@ P<-rbind(P1,P2)
 
 risk <- getRisk(mu1, mu2, sigma)
 cat("risk:", risk, "\n")
+text( plotxmin,plotymin-1, sprintf("risk = %s", risk ), adj = c( 0, -1 ), col = "blue" )
