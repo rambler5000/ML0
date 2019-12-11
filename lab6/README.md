@@ -56,4 +56,4 @@ naiv <- function(x,m,s,lamda,PP)
 # Пример работы классификатора
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" title="\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" /></a>
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab6/naiv_map.png)
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab6/naiv.png)
