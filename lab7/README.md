@@ -96,7 +96,7 @@ classifier <- function(xy,m,s,lymda,PP)
       f <- x^2*A + y^2*B + x*y*C + x*D + y*E + F
     }
     f <- func(xy[1],xy[2])
-    p[i] <- log(l*P)+f
+    p[i] <- log(l*P) - f
   }
   if(p[1] > p[2])
   {
