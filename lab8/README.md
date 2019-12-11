@@ -64,6 +64,51 @@ coef <- function(mu1,mu2,sigma)
   }
   return(func)
 }
+
+classifier <- function(xy,m,s,lymda,PP)
+{
+  n <- dim(mu)[2]
+  p <- rep(0,n)
+  a <- matrix(c(0,0,0,0),2,2)
+  for(i in 1:n)
+  {
+    mu <- matrix(c(m[i,1],m[i,2]),1,2)
+    l <- lymda[i]
+    P <- PP[i]
+    det <- det(sigma)
+    invsigma <- solve(sigma)
+    
+    b <- invsigma %*% t(mu) 
+    D <- -2*b[1,1]
+    E <- -2*b[2,1]
+    
+    F <- c(mu %*% invsigma %*% t(mu)) 
+    
+    func <- function(x, y) {
+      f<-x*D + y*E + F
+    }
+    f<-func(xy[1],xy[2])
+    p[i] <- log(l*P) - f
+  }
+  if(p[1] > p[2])
+  {
+    class<-colors[1]
+  }
+  else
+  {
+    class<-colors[2]
+  }
+  return(class)
+}
+
+getRisk <- function(mu1, mu2, sigma) {
+  mah <- (mu1 - mu2) %*% solve(sigma) %*% t(mu1 - mu2)
+  mah <- mah * -0.5
+  res <- gausian(mah, 0, 1)
+}
+gausian <- function(x, mu, sigma){
+  return( (1/(sigma*sqrt(2*pi))) * exp(-(x - mu)^2/2*sigma^2) )
+}
 ```
 # Примеры работы алгоритма:
 
