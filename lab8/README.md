@@ -116,4 +116,6 @@ gausian <- function(x, mu, sigma){
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab8/ldf.png)
 
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab8/ldf2.png)
+
  Одним из недостатков подстановочного алгоритма является плохая обусловленность или вырожденность матрицы ковариаций <a href="https://www.codecogs.com/eqnedit.php?latex=\Sigma_y" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Sigma_y" title="\Sigma_y" /></a> при малом количестве обучающих элементов класса  y, вследствие чего при обращении данной матрицы <a href="https://www.codecogs.com/eqnedit.php?latex=\Sigma_y^{-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Sigma_y^{-1}" title="\Sigma_y^{-1}" /></a> может получиться сильно искаженный результат, и весь алгоритм классификации окажется неустойчивым. Линейный дискриминант Фишера решает данную проблему. Наиболее целесообразно пользоваться линейным дискриминантом Фишера, когда данных для обучения недостаточно.
