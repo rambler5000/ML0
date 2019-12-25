@@ -18,7 +18,7 @@ ADALINE(Адаптивны линейный элемент) - линейный �
 обновление весов происходит по формуле:
 <a href="https://www.codecogs.com/eqnedit.php?latex=w&space;=&space;w&space;-&space;\eta(\langle&space;w,x_i&space;\rangle-y_i)x_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w&space;=&space;w&space;-&space;\eta(\langle&space;w,x_i&space;\rangle-y_i)x_i" title="w = w - \eta(\langle w,x_i \rangle-y_i)x_i" /></a>
 
-# Реализация на R
+Реализация на R
 ```R
 adaline_loss <- function(x) {
   l <- (x-1)^2
@@ -42,6 +42,7 @@ adaline_upd <- function(xi, yi, w, eta) {
 обновление весов происходит по правилу Хебба:
 <a href="https://www.codecogs.com/eqnedit.php?latex=$w$&space;=&space;$&space;w&plus;&space;\eta&space;x_iy_i$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$w$&space;=&space;$&space;w&plus;&space;\eta&space;x_iy_i$" title="$w$ = $ w+ \eta x_iy_i$" /></a>
 
+Реализация на R
 ```R
 hebb_loss <- function(x) {
   return (max(-x, 0))
@@ -66,6 +67,7 @@ hebb_upd <- function(xi, yi, w, eta) {
 вероятность принадлежности элемента x к классу y
 <a href="https://www.codecogs.com/eqnedit.php?latex=$P(y&space;\mid&space;x)$=$\sigma(\langle&space;w,x\rangle&space;y)$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$P(y&space;\mid&space;x)$=$\sigma(\langle&space;w,x\rangle&space;y)$" title="$P(y \mid x)$=$\sigma(\langle w,x\rangle y)$" /></a>
 
+Реализация на R
 ```R
 logregss_loss <- function(x) {
   return(log2(1+exp(-x)))
