@@ -26,7 +26,6 @@ adaline_loss <- function(x) {
 }
 adaline_upd <- function(xi, yi, w, eta) {
   wx <- c(crossprod(w, xi))
-  #ld <- 2 * (wx - yi) * xi
   l <- (wx - yi) * xi
   nextW <- w - eta * l
   return(nextW)
