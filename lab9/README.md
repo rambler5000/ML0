@@ -81,6 +81,8 @@ sigmoid <- function(z) {
 
 Пример работы алгоритма:
 
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab9/logress.png)
+
 Пример работы алгоритмов:
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab9/add_hebb_log.png)
