@@ -35,7 +35,7 @@ adaline_upd <- function(xi, yi, w, eta) {
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab9/ADALINE.png)
 
-# Персептронр Розенблатта
+# Персептрон Розенблатта
 Персептрон Розенблатта — линейный классификатор, в котором используется кусочно-линейная функция потерь:
 <a href="https://www.codecogs.com/eqnedit.php?latex=$L=(-M)_&plus;$=$max(-M,0)$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$L=(-M)_&plus;$=$max(-M,0)$" title="$L=(-M)_+$=$max(-M,0)$" /></a>
 
