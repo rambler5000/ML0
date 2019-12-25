@@ -32,7 +32,7 @@ adaline_upd <- function(xi, yi, w, eta) {
   return(nextW)
 }
 ```
-Примеры работы алгоритма:
+Пример работы алгоритма:
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab9/ADALINE.png)
 
@@ -52,7 +52,7 @@ hebb_upd <- function(xi, yi, w, eta) {
   return (nextW)
 }
 ```
-Примеры работы алгоритма:
+Пример работы алгоритма:
 
 ![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab9/hebb.png)
 
@@ -80,7 +80,9 @@ sigmoid <- function(z) {
 }
 ```
 
-Примеры работы алгоритма:
+Пример работы алгоритма:
 
-![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab9/logregss.png)
+Пример работы алгоритмов:
+
+![Image alt](https://github.com/KOCTYN/ML0/blob/master/lab9/add_hebb_log.png)
 
